@@ -34,6 +34,8 @@ export default function Home() {
             center.
           </p>
         </div>
+        <button className="btn">Button</button>
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
             className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
