@@ -8,7 +8,7 @@ export default function Home() {
   const [showAll, setShowAll] = useState(false);
   useEffect(() => {
     const getArticles = async () => {
-      const data = await fetch("http://localhost:3000/api/qiita").then((res) =>
+      const data = await fetch("/api/qiita").then((res) =>
         res.json(),
       );
       setArticles(data);
