@@ -1,8 +1,11 @@
 import { Article } from "@/types/article";
+import { NextRequest } from "next/server";
 
-export async function GET(): Promise<Response> {
+export async function GET(req: NextRequest): Promise<Response> {
+  const page = req.nextUrl.searchParams.get("page") || null;
+  const perPage = req.nextUrl.searchParams.get("per_page") || null;
   const response = await fetch(
-    "https://qiita.com/api/v2/authenticated_user/items",
+    `https://qiita.com/api/v2/authenticated_user/items?${page && perPage ? `page=${page}&per_page=${perPage}` : ""}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.QIITA_APIKEY}`,
