@@ -54,6 +54,7 @@ export default function Home() {
             title={item.title}
             description={item.description}
             url={`/blog/${item.id}`}
+            thumbnail={item.thumbnail}
           />
         ))}
       </div>

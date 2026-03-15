@@ -17,14 +17,17 @@ export async function GET(req: NextRequest): Promise<Response> {
       id,
       description,
       title,
+      thumbnail,
     }: {
       id: string;
       description: string;
       title: string;
+      thumbnail?: { url: string };
     }) => ({
       id,
       description,
       title,
+      thumbnail: thumbnail?.url,
     }),
   );
   return Response.json(data);

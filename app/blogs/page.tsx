@@ -19,6 +19,7 @@ export default async function Home() {
           title={item.title}
           description={item.description}
           url={`${blogUrl}/${item.id}`}
+          thumbnail={item.thumbnail}
         />
       ))}
     </div>
