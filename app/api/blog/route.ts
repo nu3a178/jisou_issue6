@@ -6,7 +6,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     `https://${process.env.MICROCMS_SERVICE_ID}.microcms.io/api/v1/blog?${limit ? `limit=${limit}` : ""}`,
     {
       headers: {
-        "X-MICROCMS-API-KEY": process.env.MICROCMS_API_KEY,
+        "X-MICROCMS-API-KEY": process.env.MICROCMS_API_KEY ?? "",
       },
     },
   );
