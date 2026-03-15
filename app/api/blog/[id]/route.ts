@@ -14,7 +14,6 @@ export async function GET(
     },
   );
   const responseJson = await response.json();
-  console.log(responseJson);
   const data = {
     id: responseJson.id,
     content: responseJson.content,

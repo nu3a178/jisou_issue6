@@ -1,6 +1,6 @@
 import { Card } from "@/components/components/card";
 import { Blog } from "@/types/blog";
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 export default async function BlogPage({
   params,
 }: {
@@ -22,7 +22,7 @@ export default async function BlogPage({
       >
         <div
           dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(data.content ?? ""),
+            __html: sanitizeHtml(data.content ?? ""),
           }}
         />
       </Card>
