@@ -1,7 +1,7 @@
 import { Card } from "@/components/components/card";
 import { Article } from "@/types/article";
 
-export default async function Home() {
+export default async function Articles() {
   const apiURl =
     process.env.NODE_ENV === "production"
       ? `https://${process.env.DEPLOY_DOMAIN}/api/qiita`

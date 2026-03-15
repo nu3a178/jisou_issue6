@@ -1,7 +1,7 @@
 import { Card } from "@/components/components/card";
 import { Blog } from "@/types/blog";
 
-export default async function Home() {
+export default async function Blogs() {
   const apiURl =
     process.env.NODE_ENV === "production"
       ? `https://${process.env.DEPLOY_DOMAIN}/api/blog`
