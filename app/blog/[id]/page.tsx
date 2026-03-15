@@ -21,7 +21,9 @@ export default async function BlogPage({
         date={data.createdAt}
       >
         <div
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.content) }}
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(data.content ?? ""),
+          }}
         />
       </Card>
     </div>
