@@ -4,4 +4,5 @@ export type Blog = {
   description: string;
   content?: string;
   thumbnail?: string;
+  createdAt?: string;
 };
