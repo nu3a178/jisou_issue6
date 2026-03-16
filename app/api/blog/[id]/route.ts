@@ -2,9 +2,9 @@ import { NextRequest } from "next/server";
 
 export async function GET(
   req: NextRequest,
-  props: PageProps<"/blog/[id]">,
+  { params }: { params: Promise<{ id: string }> },
 ): Promise<Response> {
-  const { id } = await props.params;
+  const { id } = await params;
   const response = await fetch(
     `https://${process.env.MICROCMS_SERVICE_ID}.microcms.io/api/v1/blog/${id}`,
     {
