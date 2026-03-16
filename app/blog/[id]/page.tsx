@@ -24,13 +24,8 @@ async function BlogContent({ params }: { params: Promise<{ id: string }> }) {
         description={data.description}
         thumbnail={data.thumbnail}
         date={data.createdAt}
-      >
-        <div
-          dangerouslySetInnerHTML={{
-            __html: sanitizeHtml(data.content ?? ""),
-          }}
-        />
-      </Card>
+        content={data.content}
+      ></Card>
     </div>
   );
 }

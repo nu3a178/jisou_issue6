@@ -1,14 +1,13 @@
-import { ReactElement } from "react";
-
+import sanitizeHtml from "sanitize-html";
 export const Card = (props: {
   title: string;
   description?: string;
   thumbnail?: string;
   url?: string;
   date?: string;
-  children?: ReactElement;
+  content?: string;
 }) => {
-  const { title, description, thumbnail, url, date, children } = props;
+  const { title, description, thumbnail, url, date, content } = props;
   return (
     <a href={url}>
       <div className="card border-1 w-100">
@@ -20,7 +19,11 @@ export const Card = (props: {
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <h3 className="text-sm text-gray-500">{description}</h3>
-          <h3 className="card-content">{children}</h3>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: sanitizeHtml(content ?? ""),
+            }}
+          />
         </div>
         {date && (
           <div className="text-sm text-gray-500 text-right px-2">{date}</div>
