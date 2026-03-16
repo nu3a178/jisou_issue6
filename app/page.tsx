@@ -1,7 +1,7 @@
 "use client";
 
-import { Card } from "@/components/components/card";
-import { PrimaryButton } from "@/components/components/primary-button";
+import { Card } from "@/components/atom/card";
+import { PrimaryButton } from "@/components/atom/primary-button";
 import { Article } from "@/types/article";
 import { Blog } from "@/types/blog";
 import { useEffect, useState } from "react";
@@ -33,6 +33,7 @@ export default function Home() {
 
   return (
     <>
+      <p className="text-2xl font-bold mb-4 self-start p-2">Articles</p>
       <div className="flex flex-row flex-wrap gap-y-4 gap-x-4  items-start content-start justify-center  ">
         {articles.map((item, index) => (
           <Card
@@ -46,7 +47,7 @@ export default function Home() {
       <a href="/articles">
         <PrimaryButton>すべて表示</PrimaryButton>
       </a>
-
+      <p className="text-2xl font-bold mb-4 self-start p-2">Blogs</p>
       <div className="flex flex-row flex-wrap gap-y-4 gap-x-4  items-start content-start justify-center  ">
         {blogs.map((item, i) => (
           <Card

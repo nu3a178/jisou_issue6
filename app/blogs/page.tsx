@@ -1,7 +1,8 @@
-import { Card } from "@/components/components/card";
+import { Card } from "@/components/atom/card";
 import { Blog } from "@/types/blog";
+import { Suspense } from "react";
 
-export default async function Blogs() {
+async function BlogsContent() {
   const apiURl =
     process.env.NODE_ENV === "production"
       ? `https://${process.env.DEPLOY_DOMAIN}/api/blog`
@@ -23,5 +24,13 @@ export default async function Blogs() {
         />
       ))}
     </div>
+  );
+}
+
+export default function Blogs() {
+  return (
+    <Suspense>
+      <BlogsContent />
+    </Suspense>
   );
 }

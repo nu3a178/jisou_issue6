@@ -1,7 +1,8 @@
-import { Card } from "@/components/components/card";
+import { Card } from "@/components/atom/card";
 import { Article } from "@/types/article";
+import { Suspense } from "react";
 
-export default async function Articles() {
+async function ArticlesContent() {
   const apiURl =
     process.env.NODE_ENV === "production"
       ? `https://${process.env.DEPLOY_DOMAIN}/api/qiita`
@@ -18,5 +19,15 @@ export default async function Articles() {
         />
       ))}
     </div>
+  );
+}
+
+export default function Articles() {
+  return (
+    <>
+      <Suspense>
+        <ArticlesContent />
+      </Suspense>
+    </>
   );
 }
