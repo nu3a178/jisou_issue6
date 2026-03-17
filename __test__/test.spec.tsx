@@ -13,7 +13,7 @@ beforeEach(() => {
       url="https://google.com"
       description="Test Description"
       content="<p>Test Content</p>"
-      date={new Date("2026-01-01").toLocaleDateString()}
+      date={new Date("2026-01-01").toLocaleDateString("ja-JP")}
     />,
   );
 });
